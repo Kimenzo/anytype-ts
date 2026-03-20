@@ -12,6 +12,7 @@ interface Props {
 	initialParts?: I.CommentContentPart[];
 	isEdit?: boolean;
 	isReply?: boolean;
+	isExpanded?: boolean;
 	readonly?: boolean;
 	onSubmit?: (parts: I.CommentContentPart[], attachments?: I.ChatMessageAttachment[], attachmentObjects?: any[]) => void;
 	onCancel?: () => void;
@@ -25,7 +26,7 @@ interface RefProps {
 
 const CommentForm = observer(forwardRef<RefProps, Props>((props, ref) => {
 
-	const { rootId, subId, placeholder, initialParts, isEdit, isReply, readonly, onSubmit, onCancel, onResize } = props;
+	const { rootId, subId, placeholder, initialParts, isEdit, isReply, isExpanded, readonly, onSubmit, onCancel, onResize } = props;
 	const editorRef = useRef<any>(null);
 	const fileInputRef = useRef<HTMLInputElement>(null);
 	const formRef = useRef<HTMLDivElement>(null);
@@ -672,7 +673,7 @@ const CommentForm = observer(forwardRef<RefProps, Props>((props, ref) => {
 	};
 
 	const isDisabled = isEmpty || isLoading;
-	const showToolbar = isFocused || !isEmpty || isEdit;
+	const showToolbar = isExpanded || isFocused || !isEmpty || isEdit;
 
 	const cn = [ 'commentForm' ];
 	if (isEdit) cn.push('isEdit');

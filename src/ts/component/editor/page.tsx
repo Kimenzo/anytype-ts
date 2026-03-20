@@ -3,7 +3,7 @@ import $ from 'jquery';
 import raf from 'raf';
 import { observer } from 'mobx-react';
 import { throttle } from 'lodash';
-import { Icon, DropTarget, EditorControls, CommentSection } from 'Component';
+import { Icon, DropTarget, EditorControls, ObjectActionBar } from 'Component';
 import { I, C, S, U, J, Key, Preview, Mark, keyboard, Storage, Action, translate, analytics, Renderer, focus } from 'Lib';
 import PageHeadEditor from 'Component/page/elements/head/editor';
 import Children from 'Component/page/elements/children';
@@ -2607,11 +2607,18 @@ const EditorPage = observer(forwardRef<I.BlockRef, Props>((props, ref) => {
 				const ch = scrollContainer.height();
 				const bt = blocks.offset().top;
 				const bh = blocks.outerHeight();
-				const commentSection = node.find('.commentSection');
-				const csh = commentSection.length ? commentSection.outerHeight() : 0;
+				const objectActionBar = node.find('.objectActionBar');
 
-				let height = ch - ct - bt - bh - csh - 8;
-				height = Math.max(J.Size.lastBlock, height);
+				let height;
+
+				if (objectActionBar.length) {
+					height = 44;
+				} else {
+					const commentSection = node.find('.commentSection');
+					const csh = commentSection.length ? commentSection.outerHeight() : 0;
+					height = Math.max(J.Size.lastBlock, ch - ct - bt - bh - csh - 8);
+				};
+
 				last.css({ height });
 			};
 
@@ -2744,14 +2751,9 @@ const EditorPage = observer(forwardRef<I.BlockRef, Props>((props, ref) => {
 				<TableOfContents ref={tocRef} {...props} />
 
 				{S.Common.config.experimental ? (
-				<CommentSection
+				<ObjectActionBar
 					rootId={rootId}
-					targetId={rootId}
-					targetType={I.CommentTargetType.Object}
 					readonly={readonly}
-					isPopup={isPopup}
-					messageId={keyboard.getMatch(isPopup)?.params?.messageId}
-					resize={resizePage}
 				/>
 			) : ''}
 			</div>

@@ -80,6 +80,7 @@ import Marker from './util/marker';
 import Sync from './util/sync';
 import LoadMore from './util/loadMore';
 import ChatCounter from './util/chatCounter';
+import ObjectActionBar from './util/objectActionBar';
 
 import Icon from './util/icon';
 import IconObject from './util/iconObject';
@@ -227,4 +228,5 @@ export {
 	CalendarSelect,
 
 	CommentSection,
+	ObjectActionBar,
 };
