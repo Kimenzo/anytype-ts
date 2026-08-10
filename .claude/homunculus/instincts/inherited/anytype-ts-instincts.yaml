@@ -1,0 +1,587 @@
+# Instincts generated from https://github.com/Kimenzo/anytype-ts
+# Generated: 2026-03-25T21:10:17.183Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: anytype-ts-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/Kimenzo/anytype-ts
+---
+
+# Anytype Ts Commit Length
+
+## Action
+
+Write moderate-length commit messages (~53 characters)
+
+## Evidence
+
+- Average commit message length: 53 chars
+- Based on 200 commits
+
+---
+id: anytype-ts-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Kimenzo/anytype-ts
+---
+
+# Anytype Ts Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: anytype-ts-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Kimenzo/anytype-ts
+---
+
+# Anytype Ts Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: anytype-ts-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Kimenzo/anytype-ts
+---
+
+# Anytype Ts Export Style
+
+## Action
+
+Prefer mixed exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: mixed
+
+---
+id: anytype-ts-test-colocate
+trigger: "when writing tests"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/Kimenzo/anytype-ts
+---
+
+# Anytype Ts Test Colocate
+
+## Action
+
+Place test file next to the source file (e.g., Button.test.tsx next to Button.tsx)
+
+## Evidence
+
+- Colocated test pattern detected
+- Tests live alongside source files
+
+---
+id: anytype-ts-test-framework
+trigger: "when writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/Kimenzo/anytype-ts
+---
+
+# Anytype Ts Test Framework
+
+## Action
+
+Use vitest as the test framework
+
+## Evidence
+
+- Test framework detected: vitest
+- File pattern: *.test.ts
+
+---
+id: anytype-ts-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/Kimenzo/anytype-ts
+---
+
+# Anytype Ts Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: anytype-ts-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/Kimenzo/anytype-ts
+---
+
+# Anytype Ts Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: src/scss/component/*, src/ts/component/block/*, src/ts/component/block/dataview/*
+
+---
+id: anytype-ts-workflow-storybook-component-stories-workflow
+trigger: "when doing storybook component stories workflow"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/Kimenzo/anytype-ts
+---
+
+# Anytype Ts Workflow Storybook Component Stories Workflow
+
+## Action
+
+Follow the storybook-component-stories-workflow workflow:
+1. Create or update .stories.tsx files for components under src/ts/component/**
+2. Add or update Storybook configuration or helper files under .storybook/
+3. Optionally update SCSS files for component styling
+4. Optionally update tsconfig.json for Storybook compatibility
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: .storybook/*.ts, .storybook/*.tsx, .storybook/*.scss
+
+---
+id: anytype-ts-workflow-icon-migration-and-fix-workflow
+trigger: "when doing icon migration and fix workflow"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/Kimenzo/anytype-ts
+---
+
+# Anytype Ts Workflow Icon Migration And Fix Workflow
+
+## Action
+
+Follow the icon-migration-and-fix-workflow workflow:
+1. Add or update SVG files under src/img/icon/ or src/img/arrow/
+2. Update TypeScript/TSX files to use new icon registry or iconParam props
+3. Update SCSS files for icon styling
+4. Optionally update scripts for icon generation or migration
+5. Optionally update icon index or registry files
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: src/img/icon/**/*.svg, src/img/arrow/**/*.svg, src/ts/component/**/*.tsx
+
+---
+id: anytype-ts-workflow-chat-or-dataview-bugfix-workflow
+trigger: "when doing chat or dataview bugfix workflow"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/Kimenzo/anytype-ts
+---
+
+# Anytype Ts Workflow Chat Or Dataview Bugfix Workflow
+
+## Action
+
+Follow the chat-or-dataview-bugfix-workflow workflow:
+1. Update one or more TSX files under src/ts/component/block/chat/ or src/ts/component/block/dataview/
+2. Update related SCSS files for chat or dataview styling
+3. Optionally update utility or provider files for chat/dataview logic
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: src/ts/component/block/chat/**/*.tsx, src/ts/component/block/dataview/**/*.tsx, src/scss/block/chat/**/*.scss
+
+---
+id: anytype-ts-workflow-drag-and-drop-widget-fix-workflow
+trigger: "when doing drag and drop widget fix workflow"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/Kimenzo/anytype-ts
+---
+
+# Anytype Ts Workflow Drag And Drop Widget Fix Workflow
+
+## Action
+
+Follow the drag-and-drop-widget-fix-workflow workflow:
+1. Update src/ts/component/drag/provider.tsx with new logic or bugfixes
+2. Make multiple sequential commits to refine the behavior
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: src/ts/component/drag/provider.tsx
+
+---
+id: anytype-ts-workflow-dataview-filters-and-selection-fix-workflow
+trigger: "when doing dataview filters and selection fix workflow"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/Kimenzo/anytype-ts
+---
+
+# Anytype Ts Workflow Dataview Filters And Selection Fix Workflow
+
+## Action
+
+Follow the dataview-filters-and-selection-fix-workflow workflow:
+1. Update TSX files under src/ts/component/block/dataview/filters*, selection*, or related menu files
+2. Update SCSS files for dataview styling
+3. Optionally update utility files for dataview logic
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: src/ts/component/block/dataview/filters*.tsx, src/ts/component/block/dataview/selection*.tsx, src/ts/component/menu/dataview/**/*.tsx
+
+---
+id: anytype-ts-instinct-naming-files
+trigger: "When creating or renaming a file"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Kimenzo/anytype-ts
+---
+
+# Anytype Ts Instinct Naming Files
+
+## Action
+
+Name the file using camelCase
+
+## Evidence
+
+- Pattern in namingConventions.files
+- Files in src/ts/component/block/chat.tsx
+
+---
+id: anytype-ts-instinct-naming-functions
+trigger: "When defining a function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Kimenzo/anytype-ts
+---
+
+# Anytype Ts Instinct Naming Functions
+
+## Action
+
+Name the function using camelCase
+
+## Evidence
+
+- Pattern in namingConventions.functions
+
+---
+id: anytype-ts-instinct-naming-classes
+trigger: "When defining a class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Kimenzo/anytype-ts
+---
+
+# Anytype Ts Instinct Naming Classes
+
+## Action
+
+Name the class using PascalCase
+
+## Evidence
+
+- Pattern in namingConventions.classes
+
+---
+id: anytype-ts-instinct-naming-constants
+trigger: "When defining a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Kimenzo/anytype-ts
+---
+
+# Anytype Ts Instinct Naming Constants
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE
+
+## Evidence
+
+- Pattern in namingConventions.constants
+
+---
+id: anytype-ts-instinct-import-style
+trigger: "When importing modules"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Kimenzo/anytype-ts
+---
+
+# Anytype Ts Instinct Import Style
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in importStyle
+- Seen in src/ts/component/block/chat.tsx
+
+---
+id: anytype-ts-instinct-export-style
+trigger: "When exporting modules or functions"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: Kimenzo/anytype-ts
+---
+
+# Anytype Ts Instinct Export Style
+
+## Action
+
+Use mixed export style (default and named exports as needed)
+
+## Evidence
+
+- Pattern in exportStyle
+
+---
+id: anytype-ts-instinct-testing-pattern
+trigger: "When writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: Kimenzo/anytype-ts
+---
+
+# Anytype Ts Instinct Testing Pattern
+
+## Action
+
+Write unit tests in files matching *.test.ts using the vitest framework
+
+## Evidence
+
+- Pattern in testing.filePattern
+- Pattern in testing.framework
+
+---
+id: anytype-ts-instinct-test-colocation
+trigger: "When adding tests for a module"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: Kimenzo/anytype-ts
+---
+
+# Anytype Ts Instinct Test Colocation
+
+## Action
+
+Place test files next to the implementation (colocated)
+
+## Evidence
+
+- Pattern in architecture.folderStructure.testLocation
+
+---
+id: anytype-ts-instinct-git-commit-format
+trigger: "When writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: Kimenzo/anytype-ts
+---
+
+# Anytype Ts Instinct Git Commit Format
+
+## Action
+
+Start the commit message with a capitalized verb and a colon (e.g., 'Fix:', 'Add:', 'Update:') followed by a concise description
+
+## Evidence
+
+- Seen in commit 'Fix: prevent chat attachments from disappearing when adding new attachment'
+- Seen in commit 'Fix detail lookup for widget file drop to use widgets store'
+
+---
+id: anytype-ts-instinct-git-merge-format
+trigger: "When merging a pull request"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: Kimenzo/anytype-ts
+---
+
+# Anytype Ts Instinct Git Merge Format
+
+## Action
+
+Use the format 'Merge pull request #[number] from [branch]' in the commit message
+
+## Evidence
+
+- Seen in commit 'Merge pull request #2084 from anyproto/js-9357-web-mode-fix-graphpdf-workers'
+
+---
+id: anytype-ts-instinct-storybook-workflow
+trigger: "When someone wants to add or update Storybook stories for UI components"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: Kimenzo/anytype-ts
+---
+
+# Anytype Ts Instinct Storybook Workflow
+
+## Action
+
+Create or update .stories.tsx files under src/ts/component/**, update .storybook/ config, and optionally update SCSS and tsconfig.json
+
+## Evidence
+
+- Workflow: storybook-component-stories-workflow
+- Files in .storybook/*.ts, src/ts/component/**/*.stories.tsx
+
+---
+id: anytype-ts-instinct-icon-migration-workflow
+trigger: "When someone wants to migrate, add, or fix icons (SVGs) and their usage in components"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: Kimenzo/anytype-ts
+---
+
+# Anytype Ts Instinct Icon Migration Workflow
+
+## Action
+
+Add/update SVG files under src/img/icon/ or src/img/arrow/, update TSX files to use icon registry/iconParam, update SCSS, and optionally update scripts
+
+## Evidence
+
+- Workflow: icon-migration-and-fix-workflow
+- Files in src/img/icon/**/*.svg, src/ts/component/**/*.tsx
+
+---
+id: anytype-ts-instinct-chat-dataview-bugfix-workflow
+trigger: "When someone wants to fix a bug in chat or dataview components"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: Kimenzo/anytype-ts
+---
+
+# Anytype Ts Instinct Chat Dataview Bugfix Workflow
+
+## Action
+
+Update TSX files under src/ts/component/block/chat/ or dataview/, update related SCSS, and optionally update utility/provider files
+
+## Evidence
+
+- Workflow: chat-or-dataview-bugfix-workflow
+- Files in src/ts/component/block/chat/**/*.tsx, src/scss/block/chat/**/*.scss
+
+---
+id: anytype-ts-instinct-drag-drop-widget-fix-workflow
+trigger: "When someone wants to fix or improve drag-and-drop behavior for widgets"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: Kimenzo/anytype-ts
+---
+
+# Anytype Ts Instinct Drag Drop Widget Fix Workflow
+
+## Action
+
+Update src/ts/component/drag/provider.tsx with new logic or bugfixes, making multiple sequential commits if needed
+
+## Evidence
+
+- Workflow: drag-and-drop-widget-fix-workflow
+- Files in src/ts/component/drag/provider.tsx
+- Sequential commits seen in commit history
+
+---
+id: anytype-ts-instinct-dataview-filters-selection-fix-workflow
+trigger: "When someone wants to fix or update dataview filters or selection logic"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: Kimenzo/anytype-ts
+---
+
+# Anytype Ts Instinct Dataview Filters Selection Fix Workflow
+
+## Action
+
+Update TSX files under src/ts/component/block/dataview/filters*, selection*, or related menu files, and update SCSS for dataview styling
+
+## Evidence
+
+- Workflow: dataview-filters-and-selection-fix-workflow
+- Files in src/ts/component/block/dataview/filters*.tsx, src/scss/block/dataview/**/*.scss
+
